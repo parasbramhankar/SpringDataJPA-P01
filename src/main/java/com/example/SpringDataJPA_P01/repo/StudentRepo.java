@@ -17,6 +17,8 @@ public interface StudentRepo extends JpaRepository<Student,Integer> {
              public Student saveStudent(Student student){
                  return studentRepo.save(student);
              }
+     <Student, Integer>(<T,Id>): here the T represents on which class you are applying this JpaRepository
+       Id: represent type of the primary key into the entity class
 
      */
 }

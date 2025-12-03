@@ -5,6 +5,8 @@ import com.example.SpringDataJPA_P01.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -15,6 +17,10 @@ public class StudentService {
         return studentRepo.save(student);
     }
 
+    public List<Student>getAllStudentData()
+    {
+        return studentRepo.findAll();
+    }
 
 
 

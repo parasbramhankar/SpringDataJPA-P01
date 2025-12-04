@@ -35,7 +35,6 @@ public class StudentService {
             Student dbStudent=studentById.get();
             dbStudent.setAge(student.getAge());
             dbStudent.setEmail(student.getEmail());
-            dbStudent.setName(student.getName());
 
 
     }

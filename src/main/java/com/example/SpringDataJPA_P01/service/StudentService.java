@@ -31,7 +31,6 @@ public class StudentService {
 
     public Student updateStudent(Integer id,Student student){
         Optional<Student> studentById = studentRepo.findById(id);
-        if(studentById.isPresent()){
 
 
     }

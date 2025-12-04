@@ -39,8 +39,6 @@ public class StudentService {
             studentRepo.save(dbStudent);
         }
 
-        return studentById;
-
     }
 
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -21,6 +22,32 @@ public class StudentService {
     {
         return studentRepo.findAll();
     }
+
+    public Student getStudentInfoById(Integer id){
+        Optional<Student>byId = studentRepo.findById(id);
+        return byId.get();
+        //return studentRepo.findById(id).orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+    }
+
+    public Student updateStudent(Integer id,Student student){
+        Optional<Student> studentById = studentRepo.findById(id);
+        if(studentById.isPresent()){
+            Student dbStudent=studentById.get();
+            dbStudent.setAge(student.getAge());
+            dbStudent.setEmail(student.getEmail());
+            dbStudent.setName(student.getName());
+            studentRepo.save(dbStudent);
+        }
+
+        return studentById;
+
+    }
+
+
+
+
+
+
 
 
 

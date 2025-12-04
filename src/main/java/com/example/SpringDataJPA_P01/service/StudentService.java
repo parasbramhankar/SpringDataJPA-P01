@@ -34,7 +34,6 @@ public class StudentService {
         if(studentById.isPresent()){
             Student dbStudent=studentById.get();
             dbStudent.setAge(student.getAge());
-            dbStudent.setEmail(student.getEmail());
 
 
     }

@@ -33,7 +33,6 @@ public class StudentService {
         Optional<Student> studentById = studentRepo.findById(id);
         if(studentById.isPresent()){
             Student dbStudent=studentById.get();
-            dbStudent.setAge(student.getAge());
 
 
     }

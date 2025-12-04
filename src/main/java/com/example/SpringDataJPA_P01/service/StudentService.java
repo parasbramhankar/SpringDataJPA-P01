@@ -36,8 +36,7 @@ public class StudentService {
             dbStudent.setAge(student.getAge());
             dbStudent.setEmail(student.getEmail());
             dbStudent.setName(student.getName());
-            studentRepo.save(dbStudent);
-        }
+
 
     }
 

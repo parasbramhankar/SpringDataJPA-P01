@@ -30,7 +30,13 @@ public class StudentService {
     }
 
     public Student updateStudent(Integer id,Student student){
+        Student dbStudent=studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student not found: "+id));
 
+        dbStudent.setName(student.getName());
+        dbStudent.setAge(student.getAge());
+        dbStudent.setEmail(student.getEmail());
+
+        return studentRepo.save(dbStudent);
     }
 
 

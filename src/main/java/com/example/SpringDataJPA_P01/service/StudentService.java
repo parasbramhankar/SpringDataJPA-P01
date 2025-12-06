@@ -30,14 +30,27 @@ public class StudentService {
     }
 
     public Student updateStudent(Integer id,Student student){
-        Student dbStudent=studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student not found: "+id));
+        Student dbStudent=studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student not found "+id));
 
+        dbStudent.setEmail(student.getEmail());
         dbStudent.setName(student.getName());
         dbStudent.setAge(student.getAge());
-        dbStudent.setEmail(student.getEmail());
 
         return studentRepo.save(dbStudent);
     }
+
+    public Student updateEmailAndAge(int id, Student student){
+        Student dbStudent=studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student not found "+id));
+
+        dbStudent.setEmail(student.getEmail());
+        dbStudent.setAge(student.getAge());
+
+        return studentRepo.save(dbStudent);
+    }
+
+
+
+
 
 
 

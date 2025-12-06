@@ -24,8 +24,8 @@ public class StudentController {
         return studentService.getAllStudentData();
     }
 
-    @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable Integer id){
+    @GetMapping
+    public Student getStudentById(@RequestParam Integer id){
         return studentService.getStudentInfoById(id);
     }
 
@@ -43,11 +43,5 @@ public class StudentController {
     public Student deleteStudentById(@PathVariable int id){
         return studentService.deleteStudentById(id);
     }
-
-
-
-
-
-
 
 }

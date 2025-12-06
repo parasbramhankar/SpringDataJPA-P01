@@ -39,6 +39,14 @@ public class StudentController {
         return studentService.updateEmailAndAge(id,student);
     }
 
+    @DeleteMapping("/{id}")
+    public Student deleteStudentById(@PathVariable int id){
+        return studentService.deleteStudentById(id);
+    }
+
+
+
+
 
 
 

@@ -34,6 +34,10 @@ public class StudentController {
         return studentService.updateStudent(id,student);
     }
 
+    @PatchMapping("/{id}")
+    public Student updateEmailAndAge(@PathVariable int id, @RequestBody Student student){
+        return studentService.updateEmailAndAge(id,student);
+    }
 
 
 

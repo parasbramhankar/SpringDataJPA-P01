@@ -48,17 +48,10 @@ public class StudentService {
         return studentRepo.save(dbStudent);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public Student deleteStudentById(int id){
+        Student student=studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student not found"));
+        studentRepo.deleteById(id);
+        return student;
+    }
 
 }
